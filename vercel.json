@@ -1,0 +1,5 @@
+{
+    "rewrites": [
+          { "source": "/", "destination": "/Lihiyot%20.html" }
+    ]
+}
