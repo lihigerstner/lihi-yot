@@ -330,13 +330,40 @@
   .final p.lead{color:var(--muted); max-width:44ch; margin:0 auto 34px; font-size:17px; font-weight:400;}
   .final .price-tag{display:block; margin-bottom:26px; font-size:16px;}
 
-  footer{
-    padding:34px 0;
-    text-align:center;
-    font-size:12.5px;
-    color:var(--muted);
-    border-top:1px solid var(--border);
+  /* ---------- FOOTER ---------- */
+  footer{ background:var(--ink); color:rgba(246,241,233,0.7); padding:0 0 50px; text-align:center; }
+  footer .wrap{ display:flex; flex-direction:column; align-items:center; gap:22px; padding-top:50px; border-top:1px solid rgba(246,241,233,0.18); }
+  footer .brand{ display:inline-flex; flex-direction:column; align-items:stretch; gap:3px; width:max-content; color:var(--cream); font-size:25px; }
+  footer .wordmark{
+    display:block; direction:ltr;
+    font-family:'Assistant', sans-serif;
+    font-size:1em; font-weight:400;
+    letter-spacing:0.42em; text-indent:0.42em; text-align:center;
+    line-height:1;
+    padding-bottom:9px;
+    border-bottom:2px solid var(--gold);
   }
+  footer .brand-sub{
+    direction:ltr; unicode-bidi:isolate;
+    text-align:center; text-indent:0.24em;
+    font-family:'Assistant', sans-serif;
+    font-size:0.47em; font-weight:600;
+    letter-spacing:0.24em;
+    color:rgba(246,241,233,0.6);
+    padding-top:3px;
+  }
+  .footer-social{ display:flex; gap:12px; }
+  .footer-social a{
+    display:flex; align-items:center; justify-content:center;
+    width:44px; height:44px;
+    border:1px solid rgba(246,241,233,0.32);
+    border-radius:6px;
+    color:var(--gold-soft);
+  }
+  .footer-social a:hover{ border-color:var(--gold-soft); color:var(--gold-soft); }
+  .disclaimer{ max-width:720px; font-size:12.5px; line-height:1.7; color:rgba(246,241,233,0.55); }
+  .disclaimer strong{ display:block; color:rgba(246,241,233,0.5); font-weight:600; margin-bottom:5px; }
+  footer .copy{ font-size:12.5px; color:rgba(246,241,233,0.45); }
 
   /* ---------- REVEAL ---------- */
   .reveal{opacity:0; transform:translateY(16px); transition:opacity .6s ease, transform .6s ease;}
@@ -631,7 +658,27 @@
   </div>
 </section>
 
-<footer>ליהיות · Kundalini Fit עם ליהי גרסטנר</footer>
+<footer>
+  <div class="wrap">
+    <div class="brand"><span class="wordmark" style="font-weight: 600">LIHIYOT</span><span class="brand-sub" style="font-weight: 700; font-size: 16px">KUNDALINI FIT</span></div>
+    <div class="footer-social">
+      <a href="https://instagram.com/lihiyot_kundalini_yoga" target="_blank" rel="noopener" aria-label="אינסטגרם" title="אינסטגרם">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5"></rect><circle cx="12" cy="12" r="4.2"></circle><circle cx="17.6" cy="6.4" r="1.1" fill="currentColor" stroke="none"></circle></svg>
+      </a>
+      <a href="https://www.youtube.com/@lihigerstner-lihiyot" target="_blank" rel="noopener" aria-label="יוטיוב" title="יוטיוב">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="4.2"></rect><path d="M10.3 9.2l4.6 2.8-4.6 2.8z" fill="currentColor" stroke="none"></path></svg>
+      </a>
+      <a href="https://wa.me/972542658994" target="_blank" rel="noopener" aria-label="ווטסאפ" title="ווטסאפ">
+        <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.4 20.6l1.3-4.3A8.2 8.2 0 1 1 8 19.4l-4.6 1.2z"></path><path d="M8.8 8.4c.3-.1.6 0 .8.3l.7 1.2c.1.3.1.6-.1.8l-.4.5c-.1.2-.2.4 0 .7.5.9 1.3 1.7 2.2 2.2.3.2.5.1.7-.1l.5-.4c.2-.2.5-.2.8-.1l1.2.7c.3.2.4.5.3.8-.2.7-.9 1.2-1.7 1.2-2.8-.2-5.2-2.6-5.4-5.4 0-.8.5-1.5 1.2-1.7z" fill="currentColor" stroke="none"></path></svg>
+      </a>
+    </div>
+    <div class="disclaimer">
+      <strong style="font-weight: 700">הבהרה חשובה</strong>
+      <p>התכנים באתר ובתרגולים מיועדים לתרגול אישי וללמידה, ואינם תחליף לייעוץ, אבחון או טיפול רפואי. בהריון, לאחר ניתוח או במצב בריאותי מיוחד - יש להתייעץ עם רופא לפני תחילת התרגול. התרגול נעשה בקצב ובאחריות המתרגלת בלבד - חשוב להקשיב לגוף, לעצור או לנוח בכל תחושת כאב, סחרחורת או אי-נוחות.</p>
+    </div>
+    <p class="copy">© 2026 ליהיות · <span style="white-space:nowrap">KUNDALINI YOGA FIT</span></p>
+  </div>
+</footer>
 
 <script>
   const revealEls = document.querySelectorAll('.reveal');
