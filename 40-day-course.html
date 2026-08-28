@@ -51,16 +51,25 @@
   }
   nav .wrap{display:flex; align-items:center; justify-content:space-between;}
   .nav-links{display:flex; gap:34px; font-size:15px; color:var(--muted); font-weight:400;}
-  .logo-block{text-align:left;}
-  .logo{
-    font-size:18px; font-weight:800; letter-spacing:.12em;
-    color:var(--ink);
+  nav .brand{ display:inline-flex; flex-direction:column; align-items:stretch; gap:3px; width:max-content; color:var(--ink); font-size:21px; }
+  nav .wordmark{
+    display:block; direction:ltr;
+    font-family:'Assistant', sans-serif;
+    font-size:1em; font-weight:400;
+    letter-spacing:0.42em; text-indent:0.42em; text-align:center;
+    line-height:1;
+    padding-bottom:9px;
+    border-bottom:2px solid var(--gold);
   }
-  .logo-underline{
-    width:100%; height:1px; background:var(--gold);
-    margin:6px 0;
+  nav .brand-sub{
+    direction:ltr; unicode-bidi:isolate;
+    text-align:center; text-indent:0.24em;
+    font-family:'Assistant', sans-serif;
+    font-size:14px; font-weight:600;
+    letter-spacing:0.24em;
+    color:var(--muted);
+    padding-top:3px;
   }
-  .logo-sub{font-size:11px; letter-spacing:.22em; color:var(--muted); font-weight:500;}
   .btn{
     display:inline-block;
     background:var(--gold);
@@ -397,11 +406,7 @@
       <a href="#about">עליי</a>
       <a href="#pricing">מחיר</a>
     </div>
-    <div class="logo-block">
-      <div class="logo">LIHIYOT</div>
-      <div class="logo-underline"></div>
-      <div class="logo-sub">KUNDALINI FIT</div>
-    </div>
+    <a href="/" class="brand"><span class="wordmark"><b>LIHIYOT</b></span><span class="brand-sub">KUNDALINI FIT</span></a>
   </div>
 </nav>
 
