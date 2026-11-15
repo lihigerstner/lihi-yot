@@ -52,6 +52,7 @@
       'background:#FFFDF8;color:#241A15;border:1px solid rgba(36,26,21,.14);border-radius:14px;padding:18px 20px;' +
       'box-shadow:0 8px 30px rgba(36,26,21,.12);font-family:"Assistant","Rubik",system-ui,sans-serif;direction:rtl;text-align:right}' +
       '#lihiyot-cookies p{margin:0 0 14px;font-size:15px;line-height:1.6;font-weight:400;color:#3A2B22}' +
+      '#lihiyot-cookies a{color:#7F622F;font-weight:600;text-decoration:underline}' +
       '#lihiyot-cookies .row{display:flex;flex-wrap:wrap;gap:10px}' +
       '#lihiyot-cookies button{font:inherit;font-size:15px;font-weight:500;letter-spacing:.02em;border-radius:6px;padding:11px 22px;cursor:pointer;min-height:44px}' +
       '#lihiyot-cookies .ok{background:#7F622F;color:#FFFDF8;border:1px solid #7F622F}' +
@@ -63,7 +64,7 @@
     box.setAttribute('role', 'dialog');
     box.setAttribute('aria-label', 'הודעה על עוגיות');
     box.innerHTML =
-      '<p>האתר משתמש בעוגיות כדי להבין איך גולשים בו ולשפר את הפרסום שלנו, באמצעות כלים של גוגל ומטא. אפשר לאשר, או להמשיך רק עם מה שהכרחי כדי שהאתר יעבוד.</p>' +
+      '<p>האתר משתמש בעוגיות כדי להבין איך גולשים בו ולשפר את הפרסום שלנו, באמצעות כלים של גוגל ומטא. אפשר לאשר, או להמשיך רק עם מה שהכרחי כדי שהאתר יעבוד. <a href="/privacy-policy.html">למדיניות הפרטיות</a></p>' +
       '<div class="row"><button type="button" class="ok">אישור</button><button type="button" class="no">רק הכרחיות</button></div>';
     box.querySelector('.ok').addEventListener('click', accept);
     box.querySelector('.no').addEventListener('click', decline);
