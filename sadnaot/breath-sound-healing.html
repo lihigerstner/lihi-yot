@@ -39,13 +39,14 @@ a:focus-visible{outline:2px solid #7F622F;outline-offset:3px}
 </div>
 </header>
 
-<section style="display: flex; flex-direction: row-reverse; flex-wrap: wrap; background: #1A1310; color: #F6F1E9;">
-<div style="flex: 1 1 480px; min-width: 0; min-height: 560px; position: relative; overflow: hidden;">
-<img src="assets/hero.jpg" alt="ג׳וליה וליהי מנגנות בקערות קריסטל מול גונגים במרפסת פתוחה" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 45%; display: block;">
+<section style="position: relative; overflow: hidden; background: #1A1310; color: #F6F1E9; min-height: 820px; display: flex; align-items: flex-end;">
+<div style="position: absolute; top: 0; left: 0; width: 100%; height: min(100%, 150vw); overflow: hidden;">
+<img src="assets/hero.jpg" alt="ג׳וליה וליהי מנגנות בקערות קריסטל מול גונגים במרפסת פתוחה" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 62%; display: block;">
+<div aria-hidden="true" style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(26,19,16,0.05) 0%, rgba(26,19,16,0.12) 38%, rgba(26,19,16,0.75) 75%, #1A1310 100%);"></div>
 </div>
-<div style="flex: 1 1 440px; min-width: 0; box-sizing: border-box; padding: 72px clamp(24px, 4vw, 64px); display: flex; flex-direction: column; justify-content: center; gap: 20px;">
+<div style="position: relative; width: 100%; max-width: 1200px; margin: 0 auto; box-sizing: border-box; padding: 320px 24px 64px 24px; display: flex; flex-direction: column; gap: 16px;">
 <div style="font-size: 13px; font-weight: 600; letter-spacing: 0.3em; color: #C9A96A;">ערב נשימה · תנועה · סאונד</div>
-<div dir="ltr" style="text-align: right; font-size: clamp(56px, 7vw, 108px); line-height: 0.9; font-weight: 800; letter-spacing: -0.015em; color: #F6F1E9;">BREATH<br><span style="color: #C9A96A; font-weight: 400;">+</span> SOUND<br><span style="color: #C9A96A;">HEALING</span></div>
+<div dir="ltr" style="text-align: right; font-size: clamp(48px, 6.6vw, 96px); line-height: 0.92; font-weight: 800; letter-spacing: -0.015em; color: #F6F1E9;">BREATH <span style="color: #C9A96A; font-weight: 400;">+</span> SOUND<br><span style="color: #C9A96A;">HEALING</span></div>
 <h1 style="margin: 8px 0 0 0; font-size: clamp(26px, 3.2vw, 40px); line-height: 1.2; font-weight: 600; color: #F6F1E9;">ערב נשימה סאונד וריפוי עם ג׳וליה וליהי</h1>
 <div style="display: flex; flex-wrap: wrap; align-items: center; column-gap: 18px; row-gap: 6px; font-size: clamp(22px, 2.4vw, 30px); font-weight: 700; color: #C9A96A;">
 <span>יום חמישי 19.11</span>
@@ -99,19 +100,27 @@ a:focus-visible{outline:2px solid #7F622F;outline-offset:3px}
 </section>
 
 <section style="background: #FFFDF8;">
-<div style="max-width: 1200px; margin: 0 auto; box-sizing: border-box; padding: 96px 24px; display: flex; flex-direction: column; gap: 40px;">
-<div style="display: flex; flex-wrap: wrap; gap: 24px 48px; align-items: flex-end;">
+<div style="max-width: 1200px; margin: 0 auto; box-sizing: border-box; padding: 96px 24px; display: flex; flex-direction: column; gap: 32px;">
+<div style="display: flex; flex-wrap: wrap; gap: 20px 48px; align-items: flex-end; justify-content: space-between;">
 <div style="flex: 1 1 380px; display: flex; flex-direction: column; gap: 10px;">
-<div style="font-size: 13px; font-weight: 600; letter-spacing: 0.3em; color: #7F622F;">המקום</div>
-<h2 style="margin: 0; font-size: clamp(32px, 3.6vw, 46px); line-height: 1.15; font-weight: 600; letter-spacing: -0.01em;">סטודיו שקט בהרצליה פיתוח</h2>
+<div style="font-size: 13px; font-weight: 600; letter-spacing: 0.3em; color: #7F622F;">המקום והערבים</div>
+<h2 style="margin: 0; font-size: clamp(32px, 3.6vw, 46px); line-height: 1.15; font-weight: 600; letter-spacing: -0.01em;">הצצה לערב</h2>
+<p style="margin: 0; font-size: 19px; line-height: 1.75; font-weight: 300; color: #3A2B22;">הסטודיו בהרצליה פיתוח, ורגעים מערבים קודמים שלנו.</p>
 </div>
-<p style="flex: 1 1 380px; margin: 0; font-size: 19px; line-height: 1.75; font-weight: 300; color: #3A2B22;">חדר רחב ומואר ברכות, מזרנים וכריות לכל אחת, וגונגים, קערות וכלי צליל שמחכים לך.</p>
+<div style="display: flex; gap: 12px;">
+<button type="button" aria-label="הקודם" onclick="slideGal(1)" style="display: inline-flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 999px; border: 1px solid rgba(36,26,21,0.35); background: transparent; color: #241A15; cursor: pointer; padding: 0;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
+<button type="button" aria-label="הבא" onclick="slideGal(-1)" style="display: inline-flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 999px; border: 1px solid rgba(36,26,21,0.35); background: transparent; color: #241A15; cursor: pointer; padding: 0;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button>
 </div>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px;">
-<video src="assets/studio.mp4" poster="assets/studio-poster.jpg" autoplay="" muted="" loop="" playsinline="" aria-label="סרטון מערב סאונד בסטודיו" style="width: 100%; height: 520px; object-fit: cover; border-radius: 14px; display: block; background: #241A15;"></video>
-<img src="assets/studio-room.jpg" alt="חדר הסטודיו עם מזרנים, כריות ושורת קערות נחושת" style="width: 100%; height: 520px; object-fit: cover; object-position: center 70%; border-radius: 14px; display: block;">
-<video src="assets/studio2.mp4" poster="assets/studio2-poster.jpg" autoplay="" muted="" loop="" playsinline="" aria-label="סרטון מערב סאונד במרחב פתוח" style="width: 100%; height: 520px; object-fit: cover; border-radius: 14px; display: block; background: #241A15;"></video>
-<img src="assets/studio-bowls.jpg" alt="קערות נחושת, קערת קריסטל וכלי צליל על מגבת" style="width: 100%; height: 520px; object-fit: cover; object-position: center 55%; border-radius: 14px; display: block;">
+</div>
+<div id="gal" style="display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: thin; padding-bottom: 10px;">
+<video src="assets/studio.mp4" poster="assets/studio-poster.jpg" autoplay="" muted="" loop="" playsinline="" aria-label="סרטון מערב סאונד בסטודיו" style="flex: 0 0 auto; width: min(320px, 78vw); height: 460px; object-fit: cover; border-radius: 14px; display: block; background: #241A15; scroll-snap-align: start;"></video>
+<img src="assets/studio-room.jpg" alt="חדר הסטודיו עם מזרנים, כריות ושורת קערות נחושת" style="flex: 0 0 auto; width: min(320px, 78vw); height: 460px; object-fit: cover; object-position: center 70%; border-radius: 14px; display: block; scroll-snap-align: start;">
+<video src="assets/studio2.mp4" poster="assets/studio2-poster.jpg" autoplay="" muted="" loop="" playsinline="" aria-label="סרטון מערב סאונד במרחב פתוח" style="flex: 0 0 auto; width: min(320px, 78vw); height: 460px; object-fit: cover; border-radius: 14px; display: block; background: #241A15; scroll-snap-align: start;"></video>
+<img src="assets/studio-bowls.jpg" alt="קערות נחושת, קערת קריסטל וכלי צליל על מגבת" style="flex: 0 0 auto; width: min(320px, 78vw); height: 460px; object-fit: cover; object-position: center 55%; border-radius: 14px; display: block; scroll-snap-align: start;">
+<img src="assets/gallery-1.jpg" alt="ליהי מדברת אל המשתתפות ליד קערות הקריסטל" style="flex: 0 0 auto; width: min(320px, 78vw); height: 460px; object-fit: cover; object-position: center 50%; border-radius: 14px; display: block; scroll-snap-align: start;">
+<img src="assets/gallery-2.jpg" alt="מעגל משתתפות סביב שורת קערות נחושת ומנדלת פרחים" style="flex: 0 0 auto; width: min(320px, 78vw); height: 460px; object-fit: cover; object-position: center 35%; border-radius: 14px; display: block; scroll-snap-align: start;">
+<img src="assets/gallery-3.jpg" alt="קערת קריסטל, תוף ורעשן זרעים" style="flex: 0 0 auto; width: min(320px, 78vw); height: 460px; object-fit: cover; object-position: center 60%; border-radius: 14px; display: block; scroll-snap-align: start;">
+<img src="assets/gallery-4.jpg" alt="שורת קערות נחושת על מגבת טורקיז" style="flex: 0 0 auto; width: min(320px, 78vw); height: 460px; object-fit: cover; object-position: center 60%; border-radius: 14px; display: block; scroll-snap-align: start;">
 </div>
 </div>
 </section>
@@ -134,21 +143,6 @@ a:focus-visible{outline:2px solid #7F622F;outline-offset:3px}
 <h3 style="margin: 0; font-size: 22px; font-weight: 600;">ליהי גרסטנר</h3>
 <p style="margin: 0; font-size: 18px; line-height: 1.75; font-weight: 300; color: #3A2B22;">אדריכלית ויזמית, סאונד הילרית ומורה לקונדליני יוגה, ויניוגה ויוגה נשית.</p>
 </div>
-</div>
-</div>
-</section>
-
-<section>
-<div style="max-width: 1200px; margin: 0 auto; box-sizing: border-box; padding: 96px 24px; display: flex; flex-direction: column; gap: 40px;">
-<div style="display: flex; flex-direction: column; gap: 10px;">
-<div style="font-size: 13px; font-weight: 600; letter-spacing: 0.3em; color: #7F622F;">מהערב הקודם</div>
-<h2 style="margin: 0; font-size: clamp(32px, 3.6vw, 46px); line-height: 1.15; font-weight: 600; letter-spacing: -0.01em;">ככה זה נראה</h2>
-</div>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px;">
-<img src="assets/gallery-1.jpg" alt="ליהי מדברת אל המשתתפות ליד קערות הקריסטל" style="width: 100%; height: 420px; object-fit: cover; object-position: center 50%; border-radius: 14px; display: block;">
-<img src="assets/gallery-2.jpg" alt="מעגל משתתפות סביב שורת קערות נחושת ומנדלת פרחים" style="width: 100%; height: 420px; object-fit: cover; object-position: center 35%; border-radius: 14px; display: block;">
-<img src="assets/gallery-3.jpg" alt="קערת קריסטל, תוף ורעשן זרעים" style="width: 100%; height: 420px; object-fit: cover; object-position: center 60%; border-radius: 14px; display: block;">
-<img src="assets/gallery-4.jpg" alt="שורת קערות נחושת על מגבת טורקיז" style="width: 100%; height: 420px; object-fit: cover; object-position: center 60%; border-radius: 14px; display: block;">
 </div>
 </div>
 </section>
@@ -195,5 +189,6 @@ a:focus-visible{outline:2px solid #7F622F;outline-offset:3px}
 
 </div>
 
+<script>function slideGal(d){var g=document.getElementById("gal");if(g)g.scrollBy({left:d*336,behavior:"smooth"});}</script>
 </body>
 </html>
