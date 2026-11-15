@@ -1,6 +1,55 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
+<!-- Google Analytics + Meta Pixel (lihi-yot.com) -->
+<script>
+(function(){
+  /* Google Analytics 4 */
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = window.gtag || function(){ dataLayer.push(arguments); };
+  gtag('js', new Date());
+  gtag('config', 'G-ZBG3BP4NGL');
+  var g = document.createElement('script');
+  g.async = true;
+  g.src = 'https://www.googletagmanager.com/gtag/js?id=G-ZBG3BP4NGL';
+  document.head.appendChild(g);
+
+  /* Meta Pixel */
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+  document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1115791491322406');
+  fbq('track', 'PageView');
+
+  /* Clicks on payment links (Morning) and WhatsApp */
+  var PLANS = {
+    'gWgL94Bmne': ['חבילת 14 תרגולים', 97],
+    'P83CacgtX2': ['חבילת 21 תרגולים', 147],
+    '4eOWoQJCSm': ['חבילת 40 תרגולים', 247],
+    'UhAFZHMDFi': ['מנוי לייב + ספרייה', 180],
+    'VT0TThlbxz': ['מנוי ספרייה', 150]
+  };
+  document.addEventListener('click', function(e){
+    var a = e.target && e.target.closest ? e.target.closest('a[href]') : null;
+    if (!a) return;
+    var href = a.getAttribute('href') || '';
+    var m = href.match(/mrng\.to\/([A-Za-z0-9]+)/);
+    if (m || /greeninvoice/.test(href)) {
+      var p = (m && PLANS[m[1]]) || ['תשלום', 0];
+      try { fbq('track', 'InitiateCheckout', { content_name: p[0], value: p[1], currency: 'ILS' }); } catch (x) {}
+      try { gtag('event', 'begin_checkout', { currency: 'ILS', value: p[1], items: [{ item_name: p[0], price: p[1], quantity: 1 }] }); } catch (x) {}
+    } else if (/wa\.me|whatsapp/.test(href)) {
+      try { fbq('track', 'Contact', { content_name: 'WhatsApp' }); } catch (x) {}
+      try { gtag('event', 'generate_lead', { method: 'whatsapp' }); } catch (x) {}
+    } else if (/app\.lihi-yot\.com/.test(href)) {
+      try { gtag('event', 'open_app'); } catch (x) {}
+    }
+  }, true);
+})();
+</script>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>הצהרת נגישות · Kundalini Fit עם ליהי גרסטנר</title>
