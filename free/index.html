@@ -48,6 +48,8 @@ button:disabled{opacity:.6;cursor:wait}
 .gift h2{margin:0 0 6px;font-size:24px}
 .gift p{margin:0;color:#E9DFCF}
 .gift a{color:var(--gold)}
+.app-shot{display:block;margin:18px auto 0;max-width:420px}
+.app-shot img{width:100%;height:auto;display:block;border-radius:10px}
 section.more{border-top:1px solid var(--line);padding:48px 0 30px}
 .cols{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 .cols h3{margin:0 0 6px;font-size:21px}
@@ -63,6 +65,110 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;font-size:14px;color
   .cols,.about{grid-template-columns:1fr}
 }
 </style>
+<!-- Google Analytics + Meta Pixel (lihi-yot.com) -->
+<script>
+(function(){
+  var KEY = 'lihiyot-cookies';
+  var choice = null;
+  try { choice = localStorage.getItem(KEY); } catch (x) {}
+
+  /* Google Analytics 4 — consent mode: nothing is stored until approval */
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = window.gtag || function(){ dataLayer.push(arguments); };
+  gtag('consent', 'default', { analytics_storage: 'denied', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' });
+  if (choice === 'all') gtag('consent', 'update', { analytics_storage: 'granted', ad_storage: 'granted', ad_user_data: 'granted', ad_personalization: 'granted' });
+  gtag('js', new Date());
+  gtag('config', 'G-ZBG3BP4NGL');
+  var g = document.createElement('script');
+  g.async = true;
+  g.src = 'https://www.googletagmanager.com/gtag/js?id=G-ZBG3BP4NGL';
+  document.head.appendChild(g);
+
+  /* Meta Pixel — sends data only after approval */
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+  document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  if (choice !== 'all') fbq('consent', 'revoke');
+  fbq('init', '1115791491322406');
+  fbq('track', 'PageView');
+
+  function accept(){
+    try { localStorage.setItem(KEY, 'all'); } catch (x) {}
+    gtag('consent', 'update', { analytics_storage: 'granted', ad_storage: 'granted', ad_user_data: 'granted', ad_personalization: 'granted' });
+    fbq('consent', 'grant');
+    fbq('track', 'PageView');
+    hide();
+  }
+  function decline(){
+    try { localStorage.setItem(KEY, 'essential'); } catch (x) {}
+    hide();
+  }
+  function hide(){ var el = document.getElementById('lihiyot-cookies'); if (el) el.remove(); }
+
+  /* Cookie notice, in the Lihiyot brand */
+  function showBanner(){
+    if (document.getElementById('lihiyot-cookies')) return;
+    var st = document.createElement('style');
+    st.textContent =
+      '#lihiyot-cookies{position:fixed;left:16px;right:16px;bottom:16px;z-index:2147483000;max-width:560px;margin:0 auto;' +
+      'background:#FFFDF8;color:#241A15;border:1px solid rgba(36,26,21,.14);border-radius:14px;padding:18px 20px;' +
+      'box-shadow:0 8px 30px rgba(36,26,21,.12);font-family:"Assistant","Rubik",system-ui,sans-serif;direction:rtl;text-align:right}' +
+      '#lihiyot-cookies p{margin:0 0 14px;font-size:15px;line-height:1.6;font-weight:400;color:#3A2B22}' +
+      '#lihiyot-cookies a{color:#7F622F;font-weight:600;text-decoration:underline}' +
+      '#lihiyot-cookies .row{display:flex;flex-wrap:wrap;gap:10px}' +
+      '#lihiyot-cookies button{font:inherit;font-size:15px;font-weight:500;letter-spacing:.02em;border-radius:6px;padding:11px 22px;cursor:pointer;min-height:44px}' +
+      '#lihiyot-cookies .ok{background:#7F622F;color:#FFFDF8;border:1px solid #7F622F}' +
+      '#lihiyot-cookies .no{background:transparent;color:#241A15;border:1px solid rgba(36,26,21,.35)}' +
+      '#lihiyot-cookies button:focus-visible{outline:2px solid #A8823F;outline-offset:2px}';
+    document.head.appendChild(st);
+    var box = document.createElement('div');
+    box.id = 'lihiyot-cookies';
+    box.setAttribute('role', 'dialog');
+    box.setAttribute('aria-label', 'הודעה על עוגיות');
+    box.innerHTML =
+      '<p>האתר משתמש בעוגיות כדי להבין איך גולשים בו ולשפר את הפרסום שלנו, באמצעות כלים של גוגל ומטא. אפשר לאשר, או להמשיך רק עם מה שהכרחי כדי שהאתר יעבוד. <a href="/privacy-policy.html">למדיניות הפרטיות</a></p>' +
+      '<div class="row"><button type="button" class="ok">אישור</button><button type="button" class="no">רק הכרחיות</button></div>';
+    box.querySelector('.ok').addEventListener('click', accept);
+    box.querySelector('.no').addEventListener('click', decline);
+    document.body.appendChild(box);
+  }
+  /* Lets a footer link reopen the notice: <a href="#" onclick="lihiyotCookies();return false">הגדרות עוגיות</a> */
+  window.lihiyotCookies = function(){ try { localStorage.removeItem(KEY); } catch (x) {} showBanner(); };
+  if (!choice) {
+    if (document.body) showBanner();
+    else document.addEventListener('DOMContentLoaded', showBanner);
+  }
+
+  /* Clicks on payment links (Morning) and WhatsApp */
+  var PLANS = {
+    'gWgL94Bmne': ['חבילת 14 תרגולים', 97],
+    'P83CacgtX2': ['חבילת 21 תרגולים', 147],
+    '4eOWoQJCSm': ['חבילת 40 תרגולים', 247],
+    'UhAFZHMDFi': ['מנוי לייב + ספרייה', 180],
+    'VT0TThlbxz': ['מנוי ספרייה', 119],
+    'TfgX01Ozx2': ['סאונד הילינג 30.11', 180],
+    'N53FUKVuFB': ['סאונד הילינג 11.12', 180]
+  };
+  document.addEventListener('click', function(e){
+    var a = e.target && e.target.closest ? e.target.closest('a[href]') : null;
+    if (!a) return;
+    var href = a.getAttribute('href') || '';
+    var m = href.match(/mrng\.to\/([A-Za-z0-9]+)/);
+    if (m || /greeninvoice/.test(href)) {
+      var p = (m && PLANS[m[1]]) || ['תשלום', 0];
+      try { fbq('track', 'InitiateCheckout', { content_name: p[0], value: p[1], currency: 'ILS' }); } catch (x) {}
+      try { gtag('event', 'begin_checkout', { currency: 'ILS', value: p[1], items: [{ item_name: p[0], price: p[1], quantity: 1 }] }); } catch (x) {}
+    } else if (/wa\.me|whatsapp/.test(href)) {
+      try { fbq('track', 'Contact', { content_name: 'WhatsApp' }); } catch (x) {}
+      try { gtag('event', 'generate_lead', { method: 'whatsapp' }); } catch (x) {}
+    } else if (/app\.lihi-yot\.com/.test(href)) {
+      try { gtag('event', 'open_app'); } catch (x) {}
+    }
+  }, true);
+})();
+</script>
 </head>
 <body>
 <header><div class="wrap"><a class="mark" href="https://lihi-yot.com"><b>LIHIYOT</b><span>KUNDALINI FIT</span></a></div></header>
@@ -94,6 +200,7 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;font-size:14px;color
         <div class="gift">
           <h2>ועוד מתנה: שבוע באפליקציה</h2>
           <p>שלחתי לך מייל עם קוד אישי. איתו כל הספרייה פתוחה לך לשבוע: עשרות תרגולים, מסלולים של 14, 21 ו־40 יום, ותרגול חדש כמעט כל בוקר. <a href="https://app.lihi-yot.com">לאפליקציה</a></p>
+          <a href="https://app.lihi-yot.com" class="app-shot"><img src="/free/assets/app.jpg" alt="אפליקציית Kundalini Fit: התרגול החדש בספרייה" width="540" loading="lazy"></a>
         </div>
         <p class="fine" style="margin-top:14px">לא רואה את המייל? כדאי להציץ בתיקיית הקידומי מכירות או הספאם.</p>
       </div>
@@ -117,7 +224,7 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;font-size:14px;color
   </section>
 </main>
 
-<footer><div class="wrap">© ליהיות · Kundalini Fit · <a href="https://lihi-yot.com">lihi-yot.com</a></div></footer>
+<footer><div class="wrap">© ליהיות · Kundalini Fit · <a href="https://lihi-yot.com">lihi-yot.com</a> · <a href="/privacy-policy.html">מדיניות פרטיות</a> · <a href="/accessibility-statement.html">הצהרת נגישות</a> · <a href="#" onclick="lihiyotCookies();return false">הגדרות עוגיות</a></div></footer>
 
 <script>
 const SCRIPT_URL="https://script.google.com/macros/s/AKfycbxveQULGhgVMC4ceCcBC0rBVrZNw36gE6CWvSLnRLqZWDIoVdIYGk_ROOHtu99QFxMi/exec";
@@ -141,6 +248,8 @@ f.addEventListener("submit",async ev=>{
   try{
     await fetch(SCRIPT_URL,{method:"POST",mode:"no-cors",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify({name,email,source:src})});
     try{localStorage.setItem("kf-free",name)}catch(e){}
+    try{fbq("track","Lead",{content_name:"free-practice"})}catch(e){}
+    try{gtag("event","generate_lead",{method:"free_practice"})}catch(e){}
     show(name.split(/\s+/)[0]);
   }catch(e){
     b.disabled=false;b.textContent="לקבל את התרגול";
